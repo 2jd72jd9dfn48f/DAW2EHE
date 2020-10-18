@@ -46,7 +46,8 @@ http://www.templatemo.com/tm-475-holiday
 							<li><a href="{{ path('login') }}">Login</a></li>
 						</ul>
 					</nav>		
-	  			</div>				
+	  			</div>	
+				  <h1>{{usuario}}</h1>			
   			</div>
   		</div>	  	
   	</div>
@@ -377,17 +378,14 @@ http://www.templatemo.com/tm-475-holiday
 	<script>
 		// HTML document is loaded. DOM is ready.
 		$(function() {
-
 			$('#hotelCarTabs a').click(function (e) {
 			  e.preventDefault()
 			  $(this).tab('show')
 			})
-
         	$('.date').datetimepicker({
             	format: 'MM/DD/YYYY'
             });
             $('.date-time').datetimepicker();
-
 			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 		  	$('a[href*=#]:not([href=#])').click(function() {
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -406,7 +404,6 @@ http://www.templatemo.com/tm-475-holiday
 		// Load Flexslider when everything is loaded.
 		$(window).load(function() {	  		
 			// Vimeo API nonsense
-
 /*
 			  var player = document.getElementById('player_1');
 			  $f(player).addEvent('ready', ready);
@@ -429,12 +426,10 @@ http://www.templatemo.com/tm-475-holiday
 			    });
 			  }
 */
-
 			 
 			 
 			  // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
 /*
-
 			  $(".flexslider")
 			    .fitVids()
 			    .flexslider({
@@ -448,16 +443,11 @@ http://www.templatemo.com/tm-475-holiday
 			      }
 			  });
 */
-
-
 			  
-
 //	For images only
 		    $('.flexslider').flexslider({
 			    controlNav: false
 		    });
-
-
 	  	});
 	</script>
  </body>
