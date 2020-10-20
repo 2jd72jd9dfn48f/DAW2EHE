@@ -228,7 +228,7 @@ http://www.templatemo.com/tm-475-holiday
 					<div class="col-lg-3 col-md-3 col-sm-3"><hr></div>	
 				</div>
 			</div>
-			<div class="row">
+			<div class="row">{# 
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
 						<img src="img/tours-03.jpg" alt="image" class="img-responsive">
@@ -272,13 +272,7 @@ http://www.templatemo.com/tm-475-holiday
 							</a>							
 						</div>
 					</div>					
-				</div>
-				<center>
-				<a href={{path('products',{'parametro': '02'})}}>Next</a>
-				<a href={{path('products',{'parametro': '03'})}}>Last</a>
-				</center>
-
-				{#  
+				</div> #}
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
 						<img src="img/tours-05.jpg" alt="image" class="img-responsive">
@@ -301,6 +295,11 @@ http://www.templatemo.com/tm-475-holiday
 						</div>
 					</div>					
 				</div>
+				<center>
+				<a href={{path('products',{'parametro': ''})}}>Previous</a>
+				<a href={{path('products',{'parametro': '03'})}}>Next</a>
+				</center>				
+				{# 
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
 						<img src="img/tours-06.jpg" alt="image" class="img-responsive">
@@ -322,9 +321,9 @@ http://www.templatemo.com/tm-475-holiday
 							</a>							
 						</div>
 					</div>					
-				</div>
+				</div> #}
 			</div>		
-		</div> #}
+		</div>
 	</section>		
 	
 	<!-- white bg -->
