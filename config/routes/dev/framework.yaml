@@ -1,3 +1,7 @@
 _errors:
     resource: '@FrameworkBundle/Resources/config/routing/errors.xml'
     prefix: /_error
+    assets:
+        packages:
+            avatars:
+                base_path:'css'
