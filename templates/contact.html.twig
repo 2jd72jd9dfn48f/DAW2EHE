@@ -46,7 +46,8 @@ http://www.templatemo.com/tm-475-holiday
 							<li><a href="{{ path('login') }}">Login</a></li>
 						</ul>
 					</nav>		
-				</div>				
+				</div>
+				  	<h1>{{usuario}}</h1>				
 			</div>
 		</div>	  	
 	</div>
@@ -106,7 +107,7 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 			<div class="row">
 				<!-- contact form -->
-				<form action="#" method="post" class="tm-contact-form">
+				<form action="/recibe" method="post" class="tm-contact-form">
 					<div class="col-lg-6 col-md-6">
 						<div id="google-map"></div>
 						<div class="contact-social">
@@ -119,16 +120,16 @@ http://www.templatemo.com/tm-475-holiday
 					</div> 
 					<div class="col-lg-6 col-md-6 tm-contact-form-input">
 						<div class="form-group">
-							<input type="text" id="contact_name" class="form-control" placeholder="NAME" />
+							<input type="text" id="contact_name" class="form-control" placeholder="NAME" name='name'/>
 						</div>
 						<div class="form-group">
-							<input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
+							<input type="email" id="contact_email" class="form-control" placeholder="EMAIL" name='email'/>
 						</div>
 						<div class="form-group">
-							<input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
+							<input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" name='subject'/>
 						</div>
 						<div class="form-group">
-							<textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE"></textarea>
+							<textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE" name='message'></textarea>
 						</div>
 						<div class="form-group">
 							<button class="tm-submit-btn" type="submit" name="submit">Submit now</button> 
