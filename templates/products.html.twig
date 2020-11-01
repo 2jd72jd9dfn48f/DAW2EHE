@@ -1,4 +1,4 @@
-{% extends layout.html.twig %}
+{% extends 'layout.html.twig' %}
 
 	{% block content %}
 	
@@ -178,30 +178,73 @@
 					<div class="col-lg-3 col-md-3 col-sm-3"><hr></div>	
 				</div>
 			</div>
+
+
 			<div class="row">
+
+				{% set lowerLimit = (currentPage - 1) * itemsPerPage %}
+				{% set upperLimit = currentPage * itemsPerPage + 1 %}
+				{% for tours in data %}
+					{% if loop.index > lowerLimit and loop.index < upperLimit %}
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
-						<img src="img/tours-03.jpg" alt="image" class="img-responsive">
+						<img src="img/{{ tours.imagen }}" alt="image" class="img-responsive">
 						<div class="tm-tours-box-1-info">
 							<div class="tm-tours-box-1-info-left">
-								<p class="text-uppercase margin-bottom-20">Proin Gravida Nibhvel Lorem Quis Bind</p>	
-								<p class="gray-text">28 March 2084</p>
+								<p class="text-uppercase margin-bottom-20">{{ tours.titulo | upper }}</p>	
+								<p class="gray-text">{{ tours.date }}</p>
 							</div>
 							<div class="tm-tours-box-1-info-right">
-								<p class="gray-text tours-1-description">Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.</p>	
+								<p class="gray-text tours-1-description">{{ tours.description }}</p>	
 							</div>							
 						</div>
 						<div class="tm-tours-box-1-link">
 							<div class="tm-tours-box-1-link-left">
-								Duration: 8 days
+								{{ tours.days }}
 							</div>
 							<a href="#" class="tm-tours-box-1-link-right">
-								$2,200								
+								{{ tours.price }}								
 							</a>							
 						</div>
 					</div>					
 				</div>
+				{% endif %}
+				{% endfor %}
+
+				{% set lastPage = (((data|length)/itemsPerPage)|round(0,'ceil')) %}
+				{% set remainder = ((((data|length)/itemsPerPage)|round(0,'ceil'))*itemsPerPage-(data|length)) %}
+				{% if lastPage == currentPage and remainder != 0 %}
+
+					{% for dummyTours in 1..remainder %}
+
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="tm-tours-box-1">
+						<img src="img/dummyTour.jpg" alt="image" class="img-responsive">
+						<div class="tm-tours-box-1-info">
+							<div class="tm-tours-box-1-info-left">
+								<p class="text-uppercase margin-bottom-20">&nbsp;</p>	
+								<p class="gray-text">&nbsp;</p>
+							</div>
+							<div class="tm-tours-box-1-info-right">
+								<p class="gray-text tours-1-description">&nbsp;</p>	
+							</div>							
+						</div>
+						<div class="tm-tours-box-1-link">
+							<div class="tm-tours-box-1-link-left">
+								&nbsp;
+							</div>
+							<a href="#" class="tm-tours-box-1-link-right">
+								&nbsp;								
+							</a>							
+						</div>
+					</div>					
+				</div>
+
+					{% endfor %}	
+				{% endif %}
+
+				
+				{# <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
 						<img src="img/tours-04.jpg" alt="image" class="img-responsive">
 						<div class="tm-tours-box-1-info">
@@ -222,15 +265,15 @@
 							</a>							
 						</div>
 					</div>					
-				</div>
-				<center>
+				</div> #}
+{# 				<center>
 				<a href={{enlace2}}>Next</a>
 				<a href={{enlace3}}>Last</a>
-				</center>
-{# 				<center>
-				<a href={{path('products',{'parametro': '02'})}}>Next</a>
-				<a href={{path('products',{'parametro': '03'})}}>Last</a>
 				</center> #}
+
+				{% for paginator in 1..lastPage %}
+				<li><a href="{{ path('products',{ currentPage : paginator }) }}" class="{{ currentPage == paginator ? 'active' : '' }}">{{ paginator }}</a></li>
+				{% endfor %}
 
 				{#  
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

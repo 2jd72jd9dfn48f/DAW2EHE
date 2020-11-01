@@ -19,18 +19,6 @@ class ContactController extends AbstractController
             'usuario' => strlen($usuario)>0?'Hola '.$usuario:'',
         ]);
     }
-    private $productos = [
-        [
-            'titulo' => 'asdfasdfas',
-            'imagen' => 'asdfa.jpg',
-            'titulo' => 'asdfasdfas',
 
-            
-
-
-
-
-        ]
-    ];
 
 }

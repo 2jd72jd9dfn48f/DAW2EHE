@@ -14,12 +14,13 @@
 		            </div>
 	  				<nav class="tm-nav">
 						<ul>
-							<li><a href="{{ path('index') }}">Home</a></li>
-							<li><a href="{{ path('services') }}">Services</a></li>
-							<li><a href="{{ path('products') }}">Our Products</a></li>
-							<li><a href="{{ path('about') }}">About</a></li>
-							<li><a href="{{ path('contact') }}">Contact</a></li>
-							<li><a href="{{ path('login') }}">Login</a></li>
+							{% set page = app.request.attributes.get('_route') %}
+							<li><a href="{{ path('index') }}" class="{{ page=='index' ? 'active' : ''}}">Home</a></li>
+							<li><a href="{{ path('services') }}" class="{{ page=='services' ? 'active' : ''}}">Services</a></li>
+							<li><a href="{{ path('products') }}" class="{{ page=='products' ? 'active' : ''}}">Our Products</a></li>
+							<li><a href="{{ path('about') }}" class="{{ page=='about' ? 'active' : ''}}">About</a></li>
+							<li><a href="{{ path('contact') }}" class="{{ page=='contact' ? 'active' : ''}}">Contact</a></li>
+							<li><a href="{{ path('login') }}" class="{{ page=='login' ? 'active' : ''}}">Login</a></li>
 						</ul>
 					</nav>		
 	  			</div>
@@ -29,7 +30,8 @@
   	</div>
 
   <main>
-    {% block content %}{% endlbock %}
+    {% block content %}
+	{% endblock %}
   </main>
 
 	<footer class="tm-black-bg">
