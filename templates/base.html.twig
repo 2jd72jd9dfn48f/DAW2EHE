@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holiday - templatemo</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+  <link href="{{asset('font-awesome.min.css','css')}}" rel="stylesheet">
+  <link href="{{asset('bootstrap.min.css','css')}}" rel="stylesheet">
+  <link href="{{asset('bootstrap-datetimepicker.min.css','css')}}" rel="stylesheet">  
+  <link href="{{asset('flexslider.css','css')}}" rel="stylesheet">
+  <link href="{{asset('templatemo-style.css','css')}}" rel="stylesheet">
+
+  </head>
+  <body class="tm-gray-bg">
+  {% block body %}{% endblock %}
+ </body>
+ </html>
