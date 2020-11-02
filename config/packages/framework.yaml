@@ -19,4 +19,6 @@ framework:
     assets:
         packages:
             css:
-                base_path: 'css'
+                base_path: '/css'
+            images:
+                base_path: '/img'
