@@ -12,13 +12,13 @@ class ProductsController extends AbstractController
     /**
      * @Route("/products/{products}/{i?content}/{currentPage?1}", name="products")
      */
-    public function index($products=1,$i,Request $request, SessionInterface $session,$currentPage)
+    public function index($products=1,Request $request, SessionInterface $session,$currentPage)
     {
 
         $usuario = $session->get('usuario');
         $userlogin = strlen($usuario)>0?'Hola '.$usuario:'';
         return $this->render('products.html.twig',[
-            'data' => $this->gallery[$i],
+            'data' => $this->gallery,
             'currentPage' => $currentPage,
             'itemsPerPage' => 4,
             'usuario' => $usuario
@@ -68,7 +68,6 @@ class ProductsController extends AbstractController
 
 
     private $gallery = [
-    'content' =>[
             [
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'tours-03.jpg',
@@ -134,6 +133,5 @@ class ProductsController extends AbstractController
                 'price' => '$1,200'
             ]
 
-        ]
-    ];
+        ];
 }
