@@ -67,8 +67,9 @@ class ProductsController extends AbstractController
 
 
 
-    private $gallery = [
+        private $gallery = [
             [
+                'id' => '1',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'tours-03.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -77,6 +78,7 @@ class ProductsController extends AbstractController
                 'price' => '$2,200'
             ],
             [
+                'id' => '2',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'tours-04.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -85,6 +87,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,800'
             ],
             [
+                'id' => '3',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'tours-05.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -93,6 +96,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,600'
             ],
             [
+                'id' => '4',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'tours-06.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -101,6 +105,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,200'
             ],
             [
+                'id' => '5',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'index-03.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -109,6 +114,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,700'
             ],
             [
+                'id' => '6',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'index-04.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -117,6 +123,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,400'
             ],
             [
+                'id' => '7',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'index-05.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -125,6 +132,7 @@ class ProductsController extends AbstractController
                 'price' => '$1,800'
             ],
             [
+                'id' => '8',
                 'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
                 'imagen' => 'index-06.jpg',
                 'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
@@ -132,6 +140,7 @@ class ProductsController extends AbstractController
                 'days' => 'Duration: 4 days',
                 'price' => '$1,200'
             ]
-
+    
         ];
-}
+    }
+    
