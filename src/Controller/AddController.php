@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Tours;
+use App\Entity\Tour;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,29 +14,20 @@ class AddController extends AbstractController
      */
     public function index(EntityManagerInterface $entityManager)
     {
-        /*
-        
-        $tours=new Tours();
-        $tours->setId();
-        $tours->setTitulo();
-        $tours->setImagen();
-        $tours->setDescripcion();
-        $tours->setFecha();
-        $tours->setDias();
-        $tours->setPrecio();
-        */
+
 
         foreach($this->gallery as $key => $value){
-            $tours=new Tours();
-            $tours->setId($key['id']);
-            $tours->setTitulo($key['titulo']);
-            $tours->setImagen($key['imagen']);
-            $tours->setDescripcion($key['description']);
-            $tours->setFecha($key['date']);
-            $tours->setDias($key['days']);
-            $tours->setPrecio($key['price']);
+            foreach($value as $prod)
+            $tour=new Tour();
+            $tour->setTipo($key);
+            $tour->setTitulo($prod['titulo']);
+            $tour->setImagen($prod['imagen']);
+            $tour->setDescription($prod['description']);
+            $tour->setDate(new \Datetime($this->Formato($prod['date'])));
+            $tour->setDays($prod['days']);
+            $tour->setPrice($prod['price']);
 
-            $entityManager->presist($tours);
+            $entityManager->persist($tour);
         }
         $entityManager->flush();
 
@@ -47,11 +38,18 @@ class AddController extends AbstractController
         ]);
     }
 
+    private function Formato($fecha){
+        $fecha=str_replace(",", "", $fecha);
+        $fecha_array=explode(" ",$fecha);
+        $mes=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        return $fecha_array[2]. "-" . (array_search($fecha_array[0],$mes)+1);
+    }
+
     
     private $gallery = [
-        [
+        'categoria1'=>        [
             'id' => '1',
-            'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
+            'titulo' => 'Proin Gravida Nibhvel Lorem Quis Bind',
             'imagen' => 'tours-03.jpg',
             'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
             'date' => '28 March 2084',
@@ -60,7 +58,7 @@ class AddController extends AbstractController
         ],
         [
             'id' => '2',
-            'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
+            'titulo' => 'Proin Gravida Nibhvel Lorem Quis Bind',
             'imagen' => 'tours-04.jpg',
             'description' => 'Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.',
             'date' => '26 March 2084',
@@ -85,7 +83,7 @@ class AddController extends AbstractController
             'days' => 'Duration: 5 days',
             'price' => '$1,200'
         ],
-        [
+        'categoria2'=>   [
             'id' => '5',
             'titulo' => '>Proin Gravida Nibhvel Lorem Quis Bind',
             'imagen' => 'index-03.jpg',

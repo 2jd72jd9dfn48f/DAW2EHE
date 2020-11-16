@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Tours;
+use App\Entity\Tour;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Tours|null find($id, $lockMode = null, $lockVersion = null)
- * @method Tours|null findOneBy(array $criteria, array $orderBy = null)
- * @method Tours[]    findAll()
- * @method Tours[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tour|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tour|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tour[]    findAll()
+ * @method Tour[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ToursRepository extends ServiceEntityRepository
+class TourRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tours::class);
+        parent::__construct($registry, Tour::class);
     }
 
     // /**
-    //  * @return Tours[] Returns an array of Tours objects
+    //  * @return Tour[] Returns an array of Tour objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ToursRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Tours
+    public function findOneBySomeField($value): ?Tour
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')
