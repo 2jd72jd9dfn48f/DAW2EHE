@@ -21,19 +21,21 @@ class ContactController extends AbstractController
         $form= $this->createForm(ContactoType::class, $contacto);
 
         $form->handleRequest($request);
+        $check='';
         if ($form->isSubmitted() && $form->isValid()){
             $contacto->setDate(new \DateTime("now"));
             $entityManager= $this->getDoctrine()->getManager();
             $entityManager->persist($contacto);
             $entityManager->flush();
-
+            $check = 'Logueado correctamente';
         }
 
         $usuario = $session->get('usuario');
         return $this->render('contact.html.twig', [
             'controller_name' => 'ContactController',
             'usuario' => strlen($usuario)>0?'Hola '.$usuario:'',
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'check'=> strlen($check)>0?'Logueado correctamente':''
         ]);
     }
 

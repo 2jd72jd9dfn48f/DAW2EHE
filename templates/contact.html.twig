@@ -72,6 +72,9 @@
 
 
 				{{ form_start(form, {'attr': {'class': 'tm-contact-form', 'method':'post'}}) }}
+
+				{{ check }}
+				
 				<div class="col-lg-6 col-md-6">
 					<div id="google-map"></div>
 					<div class="contact-social">
@@ -94,13 +97,8 @@
 				</div>
 
 				<div class="col-lg-6 col-md-6 tm-contact-form-input">
+				{{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder' : 'NAME', 'name': 'name', 'id': 'contact_name' }}) }}
 
-
-					<div class="form-group">
-
-						{{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder' : 'NAME', 'name': 'name', 'id': 'contact_name' }}) }}
-
-					</div>
 
 					<div class="form-group">
 
