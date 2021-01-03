@@ -130,7 +130,7 @@ class Tour
     }
 
     public function getCategoria(): ?Categoria
-    {
+    {   
         return $this->categoria;
     }
 
@@ -140,4 +140,5 @@ class Tour
 
         return $this;
     }
+
 }
