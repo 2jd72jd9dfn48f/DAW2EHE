@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/index", name="index")
      */
     public function index(SessionInterface $session)
     {
@@ -22,10 +22,3 @@ class IndexController extends AbstractController
         ]);
     }
 }
-
-/* 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-SessionInterface $session
-$usuario = $session->get('usuario');
-'usuario' => strlen($usuario)>0?'Hola '.$usuario:'',
-  */
