@@ -21,7 +21,12 @@
 							<li><a href="{{ path('tour_index') }}" class="{{ page=='tour' ? 'active' : ''}}">Administracion</a></li>
 							<li><a href="{{ path('about') }}" class="{{ page=='about' ? 'active' : ''}}">About</a></li>
 							<li><a href="{{ path('contact') }}" class="{{ page=='contact' ? 'active' : ''}}">Contact</a></li>
-							<li><a href="{{ path('login') }}" class="{{ page=='login' ? 'active' : ''}}">Login</a></li>
+
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li><a href="{{ path('app_logout') }}" class="{{ page=='login' ? 'active' : ''}}">Logout</a></li>{% else %}
+	<li><a href="{{ path('login') }}" class="{{ page=='login' ? 'active' : ''}}">Login</a></li>
+{% endif %}
+							
 							<li><a href="{{ path('register') }}" class="{{ page=='register' ? 'active' : ''}}">Register</a></li>
 						</ul>
 					</nav>		
